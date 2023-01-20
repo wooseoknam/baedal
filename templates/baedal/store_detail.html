@@ -1,0 +1,20 @@
+<!-- <form>
+{% for i in menu %}
+<ul>
+    <label><input type="checkbox" name="menu" value="{{i}}">{{ i }}<br> </label>
+</ul>
+{% endfor %}
+<p><input type="submit" value="주문"></p> -->
+
+
+<form action="{% url 'baedal:cart'%}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div>
+        {% for i in menu %}
+        <ul>
+            <label><input type="checkbox" name="menu" value="{{i}}">{{ i }}<br> </label>
+        </ul>>
+        {% endfor %}
+    </div>
+    <button type="submit">주문</button>
+</form>
